@@ -15,7 +15,7 @@ namespace RedisTr.redis
 #if DEBUG
 
 #else
-Password = "d9ezTxevOkZYhxs8b31O/cdum/2sL9I/fXB3fBJFzLaHZnqUfBdGuOaRwo5hRyIWCk4eGAtcCAWvJVdhbsr",
+Password = "",
 #endif
                     EndPoints = { "host.docker.internal:6379" },
                     
