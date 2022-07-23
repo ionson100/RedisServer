@@ -3,11 +3,11 @@ using StackExchange.Redis;
 
 namespace RedisTr.redis
 {
-    public class RedisConnectioSinglton: IRedisConnectionE
+    public class RedisConnectionSinglton: IRedisConnectionE
     {
         private readonly ConnectionMultiplexer _connectionMultiplexer;
         private readonly IServer _server=null;
-        public RedisConnectioSinglton()
+        public RedisConnectionSinglton()
         {
             Task<ConnectionMultiplexer> redis = ConnectionMultiplexer.ConnectAsync(
                 new ConfigurationOptions//host.docker.internal

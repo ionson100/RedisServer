@@ -27,10 +27,9 @@ namespace RedisTr.redis
             long runner = 0;
             ISubscriber sub = _redisConnectionE.GConnectionMultiplexer().GetSubscriber();
 
-            WrapperMessage m=new WrapperMessage();
-            m.Data = _rabBody;
-            m.Key = utils.Utils.RandomString(12);
-             await sub.SubscribeAsync($"canel:{100}:{1}:{m.Key}", (channel, message) =>
+            WrapperMessage m = new WrapperMessage {Data = _rabBody, Key = utils.Utils.RandomString(12)};
+
+            await sub.SubscribeAsync($"canel:{100}:{1}:{m.Key}", (channel, message) =>
              {
                   sub.UnsubscribeAsync(channel.ToString());
                  _mDataOut.SetErrorData(ErrorCode.PrintError, message);

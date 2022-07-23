@@ -33,7 +33,7 @@ namespace RedisTr
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RedisTr", Version = "v1" });
             });
-            services.AddSingleton<IRedisConnectionE, RedisConnectioSinglton>();
+            services.AddSingleton<IRedisConnectionE, RedisConnectionSinglton>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
